@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <math.h>
+//问题是打出min 到 max 之间的所有素数
+
+int main()
+{
+    int min = 0, max = 0, i = 0, j = 0, k = 0;//k为为找到的因数
+    scanf("%d", &min);
+    scanf("%d", &max);
+    for (i = min; i <= max; i++)
+    {
+        
+        for (j=2,k=0;j<=sqrt(i);j++) //无需担心2，3是否进入循环因为没有一个合数的因数会小于2
+        {
+           if (i%j==0)
+           {
+               k=j;                 //如果找到因数据令k等于因数
+               break;
+           }
+        }
+
+        if (k==0&&i!=1)
+        {
+            printf("%d\n",i);
+        }
+        
+        
+    }
+
+    system("pause");
+    return 0;
+}
